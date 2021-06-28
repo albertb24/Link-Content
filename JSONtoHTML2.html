@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.4.0/json2html.min.js"></script>
+ 
+<script>
+    let template = {'<>':'div','html':'${number} ${u_kb_introduction} ${published}'};
+        
+    let data = [
+    {
+            
+           //Knowledge API Response here
+        }
+    ]
+
+
+//retrive URL's 
+document.write( json2html.transform(data,template) );
+
+var links = document.getElementsByTagName('a');
+var arr = [], l = document.links;
+for(var i=0; i<l.length; i++) {
+    arr.push(l[i].href);
+
+}
+
+for(i=0;i<data.length;i++) {
+    console.log(data[i].number);
+    console.log(data[i].short_description);
+    console.log(data[i].u_kb_introduction);
+  
+}
+
+var obj = JSON.parse(data.u_kb_introduction)
+
+   
+</script>
+</body>
+</html>
